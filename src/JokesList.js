@@ -74,6 +74,11 @@ class JokesList extends Component {
     );
   }
 
+  clearList(){
+    window.localStorage.clear();
+    window.location.reload();
+  }
+
   handleClick(){
     this.setState({loading: true}, this.getJokes);
   }
@@ -99,7 +104,8 @@ class JokesList extends Component {
           src="https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg"
         />
         <button className="JokeList-getmore" onClick={this.handleClick}>New Jokes</button>
-        <p className="JokeList-jokesCuantity">Number of Jokes: {this.state.jokes.length}</p>
+        <p className="JokeList-jokesCuantity">Total Jokes: {this.state.jokes.length}</p>
+        <button className="JokeList-clearList" onClick={this.clearList}>Clear list</button>
       </div>
         <div className="JokeList-jokes">
           {jokes.map(joke=>(
