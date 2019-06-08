@@ -25,10 +25,6 @@ class JokesList extends Component {
    }
   }    
 
-  // componentWillUnmount(){
-  //   window.localStorage.clear();
-  // }
-
   async getJokes(){
 
     try{
